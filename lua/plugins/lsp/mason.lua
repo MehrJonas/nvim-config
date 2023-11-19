@@ -1,3 +1,5 @@
+local M = {}
+
 
 local on_attach = function(_, bufnr)
   local nmap = function(keys, func, desc)
@@ -36,15 +38,16 @@ local on_attach = function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 end
 
-
-local function init()
-
+M.setup = function()
   require('mason').setup()
   local mason_lspconfig = require('mason-lspconfig')
   mason_lspconfig.setup()
   local servers = {
     lua_ls = {
       Lua = {
+        diagnostics = {
+          globals = { "vim" },
+        },
         workspace = { checkThirdParty = false },
         telemetry = { enable = false },
       }
@@ -70,14 +73,4 @@ local function init()
   }
 end
 
-
-return {
-  "neovim/nvim-lspconfig",
-  dependencies = {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "nvimtools/none-ls.nvim",
-  },
-  init = init
-}
-
+return M
