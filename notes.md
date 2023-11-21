@@ -10,6 +10,9 @@
 - akinsho/bufferline.nvim -> better looking tabs
 - ahmedkhalf/project.nvim -> navigate between projects (with telescope integration!)
 - maybe tabnine?
+- noice: different UI for messages, ex mode etc
+- leap: navigation
+- clever-f: better fFtT functionality
 
 
 # required capabilities
