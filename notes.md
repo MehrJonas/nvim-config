@@ -1,10 +1,7 @@
 # more plugins to consider
 
-- which-key: show pending key combinations
 - lualine: better statusline (alternatives?)
 - dap plugins for debug support
-- autopairs for auto closing brackets
-- nvim-ts-autotag -> utils for html/xml tags
 - chrisgrieser/nvim-various-textobjs -> textobjects: html tags, indentation (among others)
 - vim-easyclip: better(?) clipboard functionality
 - akinsho/bufferline.nvim -> better looking tabs
@@ -31,4 +28,8 @@
 - better :w / :x / :q behaviour (?)
 - tabs, windows -> keymaps ?
 
+
+# other todos
+- which-key -> configure
+- find better mappings for completions
 
