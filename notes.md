@@ -1,6 +1,5 @@
 # more plugins to consider
 
-- lualine: better statusline (alternatives?)
 - dap plugins for debug support
 - chrisgrieser/nvim-various-textobjs -> textobjects: html tags, indentation (among others)
 - vim-easyclip: better(?) clipboard functionality
@@ -17,15 +16,15 @@
 - comments -> done
 - autoformat -> use lsp, needs configurig
 - navigation -> telescope, needs more configuring
-- textobjects -> mostly done through treesitter, maybe add vim-surround or similar?
+- textobjects -> mostly done -> maybe add nvim-various-textobjs
 - refactoring tools -> todo (maybe with primagens plugin)
-- git -> diff, merge, staging seperate hunks etc. not clear yet
-- tree exploring -> todo (nvim-tree?)
+- git -> neogit, diffview -> needs configuring
+- tree exploring -> nvim tree: done. todo: add ranger-like functionality?
 - terminal -> todo (toggleterm?)
 - debugging -> todo, dap
 - run from nvim, e.g. via gradle -> todo
 - gradle -> todo
-- better :w / :x / :q behaviour (?)
+- better :w / :x / :q behaviour (maybe just remap :w -> :wa, :x -> :xa?)
 - tabs, windows -> keymaps ?
 
 

@@ -33,11 +33,22 @@ local opts = {
 }
 
 return {
-  "lewis6991/gitsigns.nvim",
-  dependencies = {
-    "tpope/vim-fugitive",
+  {
+    "lewis6991/gitsigns.nvim",
+    dependencies = {
+      "tpope/vim-fugitive",
+    },
+    init = function()
+      require("gitsigns").setup(opts)
+    end,
   },
-  init = function()
-    require("gitsigns").setup(opts)
-  end,
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "sindrets/diffview.nvim",
+    },
+    config = true
+  }
 }
