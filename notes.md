@@ -2,9 +2,8 @@
 
 - dap plugins for debug support
 - vim-easyclip: better(?) clipboard functionality
-- ahmedkhalf/project.nvim -> navigate between projects (with telescope integration!)
 - maybe tabnine?
-- noice: different UI for messages, ex mode etc
+- noice: different UI for messages, ex mode etc -> branch
 - leap: navigation
 
 

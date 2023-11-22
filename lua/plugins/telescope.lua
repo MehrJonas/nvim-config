@@ -1,4 +1,4 @@
--- Telescope live_grep in git root
+-- Telescope live_grep in git root:q
 -- Function to find the git root directory based on the current buffer's path
 local function find_git_root()
   -- Use the current buffer's path as the starting point for the git search
@@ -36,6 +36,7 @@ local init = function()
 
   -- Enable telescope fzf native, if installed
   pcall(require('telescope').load_extension, 'fzf')
+  require("telescope").load_extension("project")
 
   require('telescope').setup {
     defaults = {
@@ -69,12 +70,14 @@ local init = function()
   vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
   vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
   vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
+  vim.keymap.set('n', '<leader>sp', require('telescope').extensions.project.project, { desc = '[S]earch [P]rojects' })
 
 end
 
 return {
   "nvim-telescope/telescope.nvim",
   dependencies = {
+    "nvim-telescope/telescope-project.nvim",
     "nvim-telescope/telescope-media-files.nvim",
     "nvim-lua/plenary.nvim",
     "BurntSushi/ripgrep",
