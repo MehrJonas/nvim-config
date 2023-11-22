@@ -2,7 +2,8 @@ local function init()
   vim.defer_fn(function()
     require('nvim-treesitter.configs').setup {
       -- Add languages to be installed here that you want installed for treesitter
-      ensure_installed = { 'lua', 'python', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash', 'java', 'html', 'xml' },
+      ensure_installed = { 'lua', 'python', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim',
+        'bash', 'java', 'html', 'xml', 'markdown', 'markdown_inline'},
 
       -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
       auto_install = true,
@@ -68,10 +69,10 @@ local function init()
 end
 
 return {
-    "nvim-treesitter/nvim-treesitter",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter-textobjects",
-    },
-    build = ':TSUpdate',
-    init = init
+  "nvim-treesitter/nvim-treesitter",
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+  },
+  build = ':TSUpdate',
+  init = init
 }

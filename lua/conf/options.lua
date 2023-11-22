@@ -4,7 +4,7 @@ opt.hlsearch = false
 opt.backup = false
 opt.clipboard = "unnamedplus"
 opt.number = true
-opt.relativenumber = true
+opt.relativenumber = false
 opt.cmdheight = 2
 opt.ignorecase = true
 opt.smartcase = true
@@ -25,5 +25,5 @@ opt.scrolloff = 8
 opt.sidescrolloff = 8
 opt.undofile = true
 opt.signcolumn = "yes"
-
+opt.showmode = false
 

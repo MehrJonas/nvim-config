@@ -33,4 +33,5 @@
 # other todos
 - which-key -> configure
 - find better mappings for completions
+- configure neogit
 
