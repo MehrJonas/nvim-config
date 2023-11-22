@@ -15,7 +15,7 @@ local config = {
     ---LHS of operator-pending mappings in NORMAL and VISUAL mode
     opleader = {
         ---Line-comment keymap
-        line = nil,
+        line = '<leader>c',
         ---Block-comment keymap
         block = nil,
     },

@@ -4,6 +4,8 @@ return {
   "tpope/vim-sleuth",
   "tpope/vim-surround",
   "tpope/vim-repeat",
+  "michaeljsmith/vim-indent-object",
+  "rhysd/clever-f.vim",
   {
     "lewis6991/impatient.nvim",
     init = function()
@@ -19,7 +21,7 @@ return {
   "folke/which-key.nvim",
   config = function()
     vim.o.timeout = true
-    vim.o.timeoutlen = 300
+    vim.o.timeoutlen = 500
     require("which-key").setup({})
   end
   }

@@ -1,14 +1,11 @@
 # more plugins to consider
 
 - dap plugins for debug support
-- chrisgrieser/nvim-various-textobjs -> textobjects: html tags, indentation (among others)
 - vim-easyclip: better(?) clipboard functionality
-- akinsho/bufferline.nvim -> better looking tabs
 - ahmedkhalf/project.nvim -> navigate between projects (with telescope integration!)
 - maybe tabnine?
 - noice: different UI for messages, ex mode etc
 - leap: navigation
-- clever-f: better fFtT functionality
 
 
 # required capabilities
@@ -26,6 +23,11 @@
 - gradle -> todo
 - better :w / :x / :q behaviour (maybe just remap :w -> :wa, :x -> :xa?)
 - tabs, windows -> keymaps ?
+
+# vim-native stuff to learn
+- jumplist
+- marks
+- management of buffers / windows / tabs
 
 
 # other todos
