@@ -30,6 +30,7 @@
   "nvim-ts-autotag": { "branch": "main", "commit": "6be1192965df35f94b8ea6d323354f7dc7a557e4" },
   "plenary.nvim": { "branch": "master", "commit": "50012918b2fc8357b87cff2a7f7f0446e47da174" },
   "popup.nvim": { "branch": "master", "commit": "b7404d35d5d3548a82149238289fa71f7f6de4ac" },
+  "ranger.nvim": { "branch": "main", "commit": "5df4122f51b8fd07c7cadee9f2134059c93c89c2" },
   "refactoring.nvim": { "branch": "master", "commit": "156532476deb10b1b2a32cb38e1078b3f9951c42" },
   "ripgrep": { "branch": "master", "commit": "a2907db2de20fd33b0bf02d9bd1375da06218865" },
   "telescope-media-files.nvim": { "branch": "master", "commit": "0826c7a730bc4d36068f7c85cf4c5b3fd9fb570a" },
