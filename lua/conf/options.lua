@@ -26,4 +26,5 @@ opt.sidescrolloff = 8
 opt.undofile = true
 opt.signcolumn = "yes"
 opt.showmode = false
+opt.hidden = true
 
