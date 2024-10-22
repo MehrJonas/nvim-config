@@ -8,6 +8,8 @@
 - junegunn/gv.vim -> git
 - vim-test-vim-test for running tests
 - harpoon?
+- tide.nvim
+- folke/trouble.nvim
 
 # required capabilities
 
@@ -52,3 +54,9 @@
 - https://github.com/Nawy/nvim-config-examples/tree/main/dap-java
 - https://sookocheff.com/post/vim/neovim-java-ide/
 - https://github.com/soofaloofa/dotfiles/commit/c8eaa77e692a12f84ad5947ae9c71269624384ff
+
+# plugins to write/modify myself
+
+- angular file switching
+- switch to similar files by name
+-
