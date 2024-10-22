@@ -1,54 +1,59 @@
 local opts = {
-  signs = {
-    add = { text = '+' },
-    change = { text = '~' },
-    delete = { text = '_' },
-    topdelete = { text = '‾' },
-    changedelete = { text = '~' },
-  },
-  on_attach = function(bufnr)
-    vim.keymap.set('n', '<leader>hp', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
+    signs = {
+        add = { text = "+" },
+        change = { text = "~" },
+        delete = { text = "_" },
+        topdelete = { text = "‾" },
+        changedelete = { text = "~" },
+    },
+    on_attach = function(bufnr)
+        vim.keymap.set(
+            "n",
+            "<leader>hp",
+            require("gitsigns").preview_hunk,
+            { buffer = bufnr, desc = "Preview git hunk" }
+        )
 
-    -- don't override the built-in and fugitive keymaps
-    local gs = package.loaded.gitsigns
-    vim.keymap.set({ 'n', 'v' }, ']c', function()
-      if vim.wo.diff then
-        return ']c'
-      end
-      vim.schedule(function()
-        gs.next_hunk()
-      end)
-      return '<Ignore>'
-    end, { expr = true, buffer = bufnr, desc = 'Jump to next hunk' })
-    vim.keymap.set({ 'n', 'v' }, '[c', function()
-      if vim.wo.diff then
-        return '[c'
-      end
-      vim.schedule(function()
-        gs.prev_hunk()
-      end)
-      return '<Ignore>'
-    end, { expr = true, buffer = bufnr, desc = 'Jump to previous hunk' })
-  end,
+        -- don't override the built-in and fugitive keymaps
+        local gs = package.loaded.gitsigns
+        vim.keymap.set({ "n", "v" }, "]c", function()
+            if vim.wo.diff then
+                return "]c"
+            end
+            vim.schedule(function()
+                gs.next_hunk()
+            end)
+            return "<Ignore>"
+        end, { expr = true, buffer = bufnr, desc = "Jump to next hunk" })
+        vim.keymap.set({ "n", "v" }, "[c", function()
+            if vim.wo.diff then
+                return "[c"
+            end
+            vim.schedule(function()
+                gs.prev_hunk()
+            end)
+            return "<Ignore>"
+        end, { expr = true, buffer = bufnr, desc = "Jump to previous hunk" })
+    end,
 }
 
 return {
-  {
-    "lewis6991/gitsigns.nvim",
-    dependencies = {
-      "tpope/vim-fugitive",
+    {
+        "lewis6991/gitsigns.nvim",
+        dependencies = {
+            "tpope/vim-fugitive",
+        },
+        init = function()
+            require("gitsigns").setup(opts)
+        end,
     },
-    init = function()
-      require("gitsigns").setup(opts)
-    end,
-  },
-  {
-    "NeogitOrg/neogit",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
-      "sindrets/diffview.nvim",
+    {
+        "NeogitOrg/neogit", -- TODO: configure / learn to use
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+            "sindrets/diffview.nvim",
+        },
+        config = true,
     },
-    config = true
-  }
 }

@@ -16,7 +16,8 @@ return {
                 vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opts)
                 vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], opts)
                 vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], opts)
-                vim.keymap.set("t", "<C->", [[<C-\>]], opts)
+                vim.keymap.set("t", "<C->", [[<C-\>]], opts) --TODO: this mapping is not working...
+                -- TODO is it possible to get tabbed terminals?
             end,
         })
     end,

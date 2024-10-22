@@ -7,10 +7,10 @@
 - leap: navigation
 - junegunn/gv.vim -> git
 - vim-test-vim-test for running tests
-
-
+- harpoon?
 
 # required capabilities
+
 - tree exploring -> nvim tree: done. todo: add ranger-like functionality?
 - debugging -> todo, dap
 - run from nvim, e.g. via gradle -> todo
@@ -26,18 +26,24 @@
 - tabs, windows -> keymaps ?
 
 # vim-native stuff to learn
+
 - jumplist
 - marks
 - management of buffers / windows / tabs
-
+- quickfixlist (+telescope integration)
 
 # other todos
+
 - which-key -> configure
 - find better mappings for completions
 - configure neogit
-
+- autosave on buffer leave?
+- map :bprev/:bnext
+- can we pipe :jumps to telescope?
+- can we restrict plugins to certain filetypes for performance?
 
 # Links
+
 - setting up for java: https://sookocheff.com/post/vim/neovim-java-ide/
 - https://github.com/kevinhwang91/rnvimr
 - https://github.com/Nawy/nvim-config-examples/tree/main/lsp-java
