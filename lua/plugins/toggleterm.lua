@@ -20,5 +20,17 @@ return {
                 -- TODO is it possible to get tabbed terminals?
             end,
         })
+
+        vim.api.nvim_create_autocmd({ "TermEnter" }, {
+            group = term_augroup,
+            pattern = "term://*",
+            callback = function()
+                local mode = vim.api.nvim_get_mode().mode
+                if mode ~= "t" then
+                    local keys = vim.api.nvim_replace_termcodes("<ESC>", true, false, true)
+                    vim.api.nvim_feedkeys(keys, "A", true)
+                end
+            end,
+        })
     end,
 }

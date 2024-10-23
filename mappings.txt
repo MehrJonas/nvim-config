@@ -1,0 +1,79 @@
+comments...
+
+cmp.lua:    mapping = {
+cmp.lua:      ["<C-k>"] = cmp.mapping.select_prev_item(),
+cmp.lua:      ["<C-j>"] = cmp.mapping.select_next_item(),
+cmp.lua:      ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
+cmp.lua:      ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+cmp.lua:      ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+cmp.lua:      ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+cmp.lua:      ["<C-e>"] = cmp.mapping {
+cmp.lua:        i = cmp.mapping.abort(),
+cmp.lua:        c = cmp.mapping.close(),
+cmp.lua:      ["<CR>"] = cmp.mapping.confirm { select = true },
+cmp.lua:      ["<Tab>"] = cmp.mapping(function(fallback)
+cmp.lua:      ["<S-Tab>"] = cmp.mapping(function(fallback)
+comments.lua:  ---LHS of toggle mappings in NORMAL mode
+comments.lua:  ---LHS of operator-pending mappings in NORMAL and VISUAL mode
+comments.lua:  ---LHS of extra mappings
+comments.lua:  ---NOTE: If given `false` then the plugin won't create any mappings
+comments.lua:  mappings = {
+comments.lua:    ---Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
+comments.lua:    ---Extra mapping; `gco`, `gcO`, `gcA`
+telescope.lua:      mappings = {
+toggleterm.lua:        require("toggleterm").setup({ open_mapping = [[<C-t>]] })
+comments.lua:    ---Line-comment toggle keymap
+comments.lua:    ---Block-comment toggle keymap
+comments.lua:    ---Line-comment keymap
+comments.lua:    ---Block-comment keymap
+git.lua:    vim.keymap.set('n', '<leader>hp', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
+git.lua:    -- don't override the built-in and fugitive keymaps
+git.lua:    vim.keymap.set({ 'n', 'v' }, ']c', function()
+git.lua:    vim.keymap.set({ 'n', 'v' }, '[c', function()
+ranger.lua:    vim.api.nvim_set_keymap("n", "<leader>rr", "", {
+refactoring.lua:local function keymaps()
+refactoring.lua:    vim.keymap.set("x", "<leader>re", function() require('refactoring').refactor('Extract Function') end)
+refactoring.lua:    vim.keymap.set("x", "<leader>rf", function() require('refactoring').refactor('Extract Function To File') end)
+refactoring.lua:    vim.keymap.set("x", "<leader>rv", function() require('refactoring').refactor('Extract Variable') end)
+refactoring.lua:    vim.keymap.set("n", "<leader>rI", function() require('refactoring').refactor('Inline Function') end)
+refactoring.lua:    vim.keymap.set({ "n", "x" }, "<leader>ri", function() require('refactoring').refactor('Inline Variable') end)
+refactoring.lua:    vim.keymap.set("n", "<leader>rb", function() require('refactoring').refactor('Extract Block') end)
+refactoring.lua:    vim.keymap.set("n", "<leader>rbf", function() require('refactoring').refactor('Extract Block To File') end)
+refactoring.lua:    vim.keymap.set("n", "<leader>rn", ":IncRename ")
+refactoring.lua:    keymaps()
+telescope.lua:  vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
+telescope.lua:  vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+telescope.lua:  vim.keymap.set('n', '<leader>/', function()
+telescope.lua:  vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
+telescope.lua:  vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
+telescope.lua:  vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
+telescope.lua:  vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
+telescope.lua:  vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
+telescope.lua:  vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
+telescope.lua:  vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
+telescope.lua:  vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
+telescope.lua:  vim.keymap.set('n', '<leader>sp', require('telescope').extensions.project.project, { desc = '[S]earch [P]rojects' })
+toggleterm.lua:                vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
+toggleterm.lua:                vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], opts)
+toggleterm.lua:                vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], opts)
+toggleterm.lua:                vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opts)
+toggleterm.lua:                vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], opts)
+toggleterm.lua:                vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], opts)
+toggleterm.lua:                vim.keymap.set("t", "<C->", [[<C-\>]], opts)
+treesitter.lua:        keymaps = {
+treesitter.lua:          keymaps = {
+mason.lua:  local nmap = function(keys, func, desc)
+mason.lua:  nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+mason.lua:  nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+mason.lua:  nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+mason.lua:  nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+mason.lua:  nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+mason.lua:  nmap('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+mason.lua:  nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+mason.lua:  nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+mason.lua:  nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
+mason.lua:  nmap('<leader>k', vim.lsp.buf.signature_help, 'Signature Documentation')
+mason.lua:  nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+mason.lua:  nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
+mason.lua:  nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
+mason.lua:  nmap('<leader>wl', function()
