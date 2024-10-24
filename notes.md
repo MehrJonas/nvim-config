@@ -59,4 +59,4 @@
 
 - angular file switching
 - switch to similar files by name
--
+- i18n
