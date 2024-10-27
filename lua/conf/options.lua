@@ -2,7 +2,6 @@ local opt = vim.opt
 
 opt.hlsearch = false
 opt.backup = false
-opt.clipboard = "unnamedplus"
 opt.number = true
 opt.relativenumber = false
 opt.cmdheight = 2
@@ -27,4 +26,3 @@ opt.undofile = true
 opt.signcolumn = "yes"
 opt.showmode = false
 opt.hidden = true
-

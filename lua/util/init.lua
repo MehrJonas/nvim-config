@@ -1,21 +1,19 @@
 local M = {}
-local opts = { noremap = true, silent = true }
 
-local keymap = vim.api.nvim_set_keymap
-
-M.map = function(mode, new, old, opts_)
-  if opts_ == nil then
-    opts_ = opts
-  end
-  keymap(mode, new, old, opts_)
+M.nmap = function(keys, func, desc) -- normal mode
+    vim.keymap.set("n", keys, func, { noremap = true, silent = true, desc = desc })
 end
 
-M.nmap = function(new, old, opts_)
-  M.map("n", new, old, opts)
+M.vmap = function(keys, func, desc) --visual mode
+    vim.keymap.set("v", keys, func, { noremap = true, silent = true, desc = desc })
 end
 
-M.vmap = function(new, old, opts_)
-  M.map("v", new, old, opts)
+M.cmap = function(keys, func, desc) -- command line mdoe
+    vim.keymap.set("c", keys, func, { noremap = true, silent = true, desc = desc })
+end
+
+M.imap = function(keys, func, desc) --insert mode
+    vim.keymap.set("i", keys, func, { noremap = true, silent = true, desc = desc })
 end
 
 return M

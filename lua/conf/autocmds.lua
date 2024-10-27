@@ -7,10 +7,11 @@ vim.api.nvim_create_autocmd({ "BufLeave" }, {
         local is_buftype_unset = buftype == nil or buftype == ""
         if is_buftype_unset and is_modified then
             vim.cmd("do BufWritePre")
-            vim.cmd("w")
+            vim.cmd("silent w")
         end
     end,
 })
+
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     group = vim.api.nvim_create_augroup("ts_imports", { clear = true }),
     pattern = { "*.ts" },
