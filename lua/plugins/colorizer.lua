@@ -5,7 +5,8 @@ return {
             "css",
             "scss",
             "javascript",
-            css = true,
+            css = { css = true },
+            scss = { css = true },
         })
     end,
 }

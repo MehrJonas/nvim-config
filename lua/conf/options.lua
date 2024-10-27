@@ -26,3 +26,4 @@ opt.undofile = true
 opt.signcolumn = "yes"
 opt.showmode = false
 opt.hidden = true
+opt.termguicolors = true

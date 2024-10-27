@@ -9,16 +9,4 @@ return {
         main = "ibl",
         opts = {},
     },
-    {
-        "folke/which-key.nvim",
-        config = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 500
-            require("which-key").setup({})
-        end,
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-            "echasnovski/mini.icons",
-        },
-    },
 }
