@@ -57,7 +57,7 @@ M.setup = function()
     capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
     mason_lspconfig.setup({
-        ensure_installed = vim.tbl_keys(servers),
+        ensure_installed = {'lua_ls', 'html', 'css_variables', 'somesass_ls', 'cssls', 'angularls', 'ts_ls'},
     })
 
     mason_lspconfig.setup_handlers({

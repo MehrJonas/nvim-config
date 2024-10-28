@@ -1,4 +1,4 @@
-return { -- TODO: use normal telescope config?
+return {
     "aznhe21/actions-preview.nvim",
     opts = {
         backend = { "nui" },

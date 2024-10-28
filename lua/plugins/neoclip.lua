@@ -1,5 +1,5 @@
 return {
-    "AkslD/nvim-neoclip.lua",
+    "AckslD/nvim-neoclip.lua",
     init = function()
         require("neoclip").setup({ default_register = { '"', "+", "*" } })
         vim.keymap.set("n", "<leader>p", function()
