@@ -34,11 +34,14 @@ end
 
 local init = function()
     -- Enable telescope fzf native, if installed
+    -- l
     pcall(require("telescope").load_extension, "fzf")
-    require("telescope").load_extension("project")
+    local telescope = require("telescope")
+    telescope.load_extension("project")
+    local utils = require("telescope.utils")
 
     local actions = require("telescope.actions")
-    require("telescope").setup({
+    telescope.setup({
         defaults = {
             mappings = {
                 i = {
@@ -61,9 +64,6 @@ local init = function()
     })
 
     vim.api.nvim_create_user_command("LiveGrepGitRoot", live_grep_git_root, {})
-
-    --TODO: go over thes keymaps
-    -- See `:help telescope.builtin`
     vim.keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
     vim.keymap.set("n", "<leader><space>", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
     vim.keymap.set("n", "<leader>/", function()
@@ -74,15 +74,34 @@ local init = function()
         }))
     end, { desc = "[/] Fuzzily search in current buffer" })
 
-    vim.keymap.set("n", "<leader>gf", require("telescope.builtin").git_files, { desc = "Search [G]it [F]iles" })
-    vim.keymap.set("n", "<leader>sf", require("telescope.builtin").find_files, { desc = "[S]earch [F]iles" })
-    vim.keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "[S]earch [H]elp" })
+    vim.keymap.set("n", "<leader>s?", require("telescope.builtin").help_tags, { desc = "[S]earch help" })
+    vim.keymap.set("n", "<leader>sf", require("telescope.builtin").git_files, { desc = "[S]earch Git [F]iles" })
+    vim.keymap.set("n", "<leader>sh", function()
+        require("telescope.builtin").find_files({ cwd = utils.buffer_dir() })
+    end, { desc = "[S]earch files [H]ere" })
+    vim.keymap.set(
+        "n",
+        "<leader>ss",
+        require("telescope.builtin").treesitter,
+        { desc = "[S]earch [S]ymbols from Treesitter" }
+    )
     vim.keymap.set("n", "<leader>sw", require("telescope.builtin").grep_string, { desc = "[S]earch current [W]ord" })
-    vim.keymap.set("n", "<leader>sg", require("telescope.builtin").live_grep, { desc = "[S]earch by [G]rep" })
-    vim.keymap.set("n", "<leader>sG", ":LiveGrepGitRoot<cr>", { desc = "[S]earch by [G]rep on Git Root" })
+    vim.keymap.set("n", "<leader>si", ":LiveGrepGitRoot<cr>", { desc = "[S]earch [I]side files" })
+    vim.keymap.set("n", "<leader>sI", function()
+        require("telescope.builtin").live_grep({ cwd = utils.buffer_dir() })
+    end, { desc = "[S]earch [I]side files at current buffer location" })
     vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "[S]earch [D]iagnostics" })
     vim.keymap.set("n", "<leader>sr", require("telescope.builtin").resume, { desc = "[S]earch [R]esume" })
     vim.keymap.set("n", "<leader>sp", require("telescope").extensions.project.project, { desc = "[S]earch [P]rojects" })
+    vim.keymap.set("n", "<leader>sgc", require("telescope.builtin").git_commits, { desc = "[S]earch [G]it [C]ommits" })
+    vim.keymap.set(
+        "n",
+        "<leader>sgf",
+        require("telescope.builtin").git_bcommits,
+        { desc = "[S]earch [G]it commits for [File]" }
+    )
+    vim.keymap.set("n", "<leader>sq", require("telescope.builtin").quickfix, { desc = "[S]earch [Q]uickfix list" })
+    vim.keymap.set("n", "<leader>sj", require("telescope.builtin").jumplist, { desc = "[S]earch [J]umplist" })
 end
 
 return {

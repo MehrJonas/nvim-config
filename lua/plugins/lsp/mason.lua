@@ -9,22 +9,28 @@ local on_attach = function(_, bufnr)
         vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
     end
 
-    -- nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame") --TODO: thi clashed with inc-rename.
-    -- nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+    nmap("<leader>cd", vim.diagnostic.open_float, "[C]ode [D]iagnostics")
+    nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
-    nmap("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-    nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-    nmap("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-    nmap("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
-    nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-    nmap("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+    nmap("<leader>nd", require("telescope.builtin").lsp_definitions, "[N]avigate to [D]efinition")
+    nmap("<leader>nr", require("telescope.builtin").lsp_references, "[N]avigate to [R]eferences")
+    nmap("<leader>ni", require("telescope.builtin").lsp_implementations, "[N]avigate to [I]mplementation")
+    nmap("<leader>nci", require("telescope.builtin").lsp_incoming_calls, "[N]avigate [C]alls: [I]ncoming")
+    nmap("<leader>nco", require("telescope.builtin").lsp_outgoing_calls, "[N]avigate [C]alls: [O]utgoing")
+    nmap("<leader>nt", require("telescope.builtin").lsp_type_definitions, "[N]avigate to [T]ype definition")
+    nmap("<leader>nds", require("telescope.builtin").lsp_document_symbols, "[N]avigate to [D]ocument [S]ymbols")
+    nmap(
+        "<leader>nws",
+        require("telescope.builtin").lsp_dynamic_workspace_symbols,
+        "[N]avigate to [W]orkspace [S]ymbols"
+    )
 
     -- See `:help K` for why this keymap
     nmap("K", vim.lsp.buf.hover, "Hover Documentation")
     nmap("<leader>k", vim.lsp.buf.signature_help, "Signature Documentation")
 
     -- Lesser used LSP functionality
-    nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+    nmap("<leader>nD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
     nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "[W]orkspace [A]dd Folder")
     nmap("<leader>wr", vim.lsp.buf.remove_workspace_folder, "[W]orkspace [R]emove Folder")
     nmap("<leader>wl", function()
@@ -57,7 +63,7 @@ M.setup = function()
     capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
     mason_lspconfig.setup({
-        ensure_installed = {'lua_ls', 'html', 'css_variables', 'somesass_ls', 'cssls', 'angularls', 'ts_ls'},
+        ensure_installed = { "lua_ls", "html", "css_variables", "somesass_ls", "cssls", "angularls", "ts_ls" },
     })
 
     mason_lspconfig.setup_handlers({

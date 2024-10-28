@@ -1,7 +1,9 @@
 return {
     "folke/noice.nvim", --TODO: too much noise... can we filter messages?
     event = "VeryLazy",
-    opts = {},
+    opts = {
+        presets = { inc_rename = true },
+    },
     dependencies = {
         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
         "MunifTanjim/nui.nvim",

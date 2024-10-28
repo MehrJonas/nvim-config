@@ -3,6 +3,7 @@ local util = require("util")
 vim.keymap.set("n", "<space>", "<Nop>", { noremap = true, silent = true })
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.keymap.set("n", "<leader>rr", "<Nop>", { noremap = true, silent = true })
 
 util.nmap("<C-h>", "<C-w>h")
 util.nmap("<C-j>", "<C-w>j")
@@ -16,5 +17,5 @@ util.vmap("Y", '"+y')
 util.nmap("YY", '"+yy')
 
 util.cmap("X", "xa")
-util.cmap("W", "wa")
+util.cmap("w", "wa")
 util.cmap("Q", "qa")

@@ -10,10 +10,8 @@ return {
                 border = "single",
             },
             keybinds = {
-                ["ov"] = ranger_nvim.OPEN_MODE.vsplit,
                 ["|"] = ranger_nvim.OPEN_MODE.vsplit,
-                ["os"] = ranger_nvim.OPEN_MODE.hsplit,
-                ["-"] = ranger_nvim.OPEN_MODE.hsplit,
+                ["-"] = ranger_nvim.OPEN_MODE.split,
             },
         })
         vim.api.nvim_set_keymap("n", "<leader>er", "", {
