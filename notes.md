@@ -19,15 +19,12 @@
 
 # other todos
 
-- which-key -> configure
 - find better mappings for completions
 - configure neogit
-- can we pipe :jumps to telescope?
 - can we restrict plugins to certain filetypes for performance?
 - lazygit terminal
 - better terminal management
 - saved run configs?
-- linewrap for diagnostic
 - mute write notifications or turn off messages in
 
 # Links

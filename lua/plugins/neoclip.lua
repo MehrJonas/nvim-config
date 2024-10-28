@@ -1,7 +1,19 @@
 return {
     "AckslD/nvim-neoclip.lua",
+    opts = {
+        default_register = { '"', "+", "*" },
+        keys = {
+            telescope = {
+                i = { paste_behind = "<insert>" },
+                n = {
+                    paste = { "p", "<cr>" },
+                    select = "y",
+                    replay = "<cr>",
+                },
+            },
+        },
+    },
     init = function()
-        require("neoclip").setup({ default_register = { '"', "+", "*" } })
         vim.keymap.set("n", "<leader>p", function()
             require("telescope").extensions.neoclip.default()
         end, { desc = "search and [p]aste from yank history" })
