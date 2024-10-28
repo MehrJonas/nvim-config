@@ -1,6 +1,4 @@
 
-
-
 n  <Space>wl   *@<Lua 435: ~/.config/nvim/lua/plugins/lsp/mason.lua:30>
                  LSP: [W]orkspace [L]ist Folders
 	Zuletzt gesetzt in Lua (run Nvim with -V1 for more details)

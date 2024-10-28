@@ -37,15 +37,14 @@ local opts = {
     end,
 }
 
+-- TODO: mappings
 return {
     {
         "lewis6991/gitsigns.nvim",
         dependencies = {
             "tpope/vim-fugitive",
         },
-        init = function()
-            require("gitsigns").setup(opts)
-        end,
+        opts = opts,
     },
     {
         "NeogitOrg/neogit", -- TODO: configure / learn to use

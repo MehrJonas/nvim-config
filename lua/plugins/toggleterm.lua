@@ -1,8 +1,11 @@
 return {
     "akinsho/toggleterm.nvim",
+    opts = {
+        open_mapping = [[<leader>tt]],
+        insert_mappings = false,
+        terminal_mappings = false,
+    },
     init = function()
-        require("toggleterm").setup({ open_mapping = [[<C-t>]] })
-
         local term_augroup = vim.api.nvim_create_augroup("term", { clear = true })
 
         vim.api.nvim_create_autocmd({ "TermOpen" }, {
@@ -16,7 +19,7 @@ return {
                 vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opts)
                 vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], opts)
                 vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], opts)
-                vim.keymap.set("t", "<C->", [[<C-\>]], opts) --TODO: this mapping is not working...
+                vim.keymap.set("t", "<C-<>", [[<C-\>]], opts) -- todo: this mapping isnt working.. -- todo: this mapping isn't working..
                 -- TODO is it possible to get tabbed terminals?
             end,
         })

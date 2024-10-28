@@ -16,8 +16,9 @@ return {
                 ["-"] = ranger_nvim.OPEN_MODE.hsplit,
             },
         })
-        vim.api.nvim_set_keymap("n", "<leader>rr", "", {
+        vim.api.nvim_set_keymap("n", "<leader>er", "", {
             noremap = true,
+            desc = "[E]xplore in [R]anger",
             callback = function()
                 require("ranger-nvim").open(true)
             end,

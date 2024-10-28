@@ -1,8 +1,8 @@
 return {
     "neovim/nvim-lspconfig",
-    init = function()
-        require("plugins.lsp.mason").setup()
-    end,
+    -- init = function()
+    --     require("plugins.lsp.mason").setup()
+    -- end,
     dependencies = {
         "nvim-lua/plenary.nvim",
         "williamboman/mason.nvim",

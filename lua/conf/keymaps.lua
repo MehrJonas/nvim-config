@@ -9,9 +9,9 @@ util.nmap("<C-j>", "<C-w>j")
 util.nmap("<C-k>", "<C-w>k")
 util.nmap("<C-l>", "<C-w>l")
 
-util.nmap("P", '"+p')
+util.nmap("P", '"+p', "[P]aste from system clipboard")
 util.vmap("P", '"+p')
-util.nmap("Y", '"+y')
+util.nmap("Y", '"+y', "[Y]ank from system clipboard")
 util.vmap("Y", '"+y')
 util.nmap("YY", '"+yy')
 
