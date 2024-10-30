@@ -10,7 +10,7 @@ local on_attach = function(_, bufnr)
     end
 
     nmap("<leader>cd", vim.diagnostic.open_float, "[C]ode [D]iagnostics")
-    nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+    -- nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
     nmap("<leader>nd", require("telescope.builtin").lsp_definitions, "[N]avigate to [D]efinition")
     nmap("<leader>nr", require("telescope.builtin").lsp_references, "[N]avigate to [R]eferences")
