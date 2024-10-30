@@ -22,7 +22,7 @@ return {
     },
     init = function()
         vim.keymap.set(
-            { "v", "n" },
+            "n",
             "<leader>ca",
             require("actions-preview").code_actions,
             { noremap = true, desc = "[C]ode [A]ctions" }

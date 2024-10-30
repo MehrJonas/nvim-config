@@ -35,9 +35,6 @@ local function init()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
 
-    -- local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-    -- cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
-
     require("luasnip.loaders.from_vscode").lazy_load()
     luasnip.config.setup({})
 
@@ -122,14 +119,17 @@ local function init()
             ghost_text = false,
         },
     })
+
+    local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+    cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 end
 
 return {
-    "hrsh7th/nvim-cmp",             -- The completion plugin
+    "hrsh7th/nvim-cmp", -- The completion plugin
     dependencies = {
-        "hrsh7th/cmp-buffer",       -- buffer completions
-        "hrsh7th/cmp-path",         -- path completions
-        "hrsh7th/cmp-cmdline",      -- cmdline completions
+        "hrsh7th/cmp-buffer", -- buffer completions
+        "hrsh7th/cmp-path", -- path completions
+        "hrsh7th/cmp-cmdline", -- cmdline completions
         "saadparwaiz1/cmp_luasnip", -- snippet completions
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-nvim-lua",
@@ -137,10 +137,10 @@ return {
         "Jezda1337/nvim-html-css",
         "roginfarrer/cmp-css-variables",
         "mmolhoek/cmp-scss",
-
         -- snippets
-        "L3MON4D3/LuaSnip",             --snippet engine
+        "L3MON4D3/LuaSnip", --snippet engine
         "rafamadriz/friendly-snippets", -- a bunch of snippets to use
+        "windwp/nvim-autopairs",
     },
     init = init,
 }

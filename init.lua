@@ -20,4 +20,4 @@ if not success then
     return
 end
 
-lazy.setup("plugins")
+lazy.setup("plugins", { rocks = { enabled = false } })

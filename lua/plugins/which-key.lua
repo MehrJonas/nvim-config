@@ -22,6 +22,7 @@ return {
             require("which-key").show({ global = false })
         end, "[H]elp (whichkey)")
     end,
+    config = true,
     dependencies = {
         "nvim-tree/nvim-web-devicons",
         "echasnovski/mini.icons",

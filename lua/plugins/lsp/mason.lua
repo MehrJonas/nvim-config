@@ -18,11 +18,11 @@ local on_attach = function(_, bufnr)
     nmap("<leader>nci", require("telescope.builtin").lsp_incoming_calls, "[N]avigate [C]alls: [I]ncoming")
     nmap("<leader>nco", require("telescope.builtin").lsp_outgoing_calls, "[N]avigate [C]alls: [O]utgoing")
     nmap("<leader>nt", require("telescope.builtin").lsp_type_definitions, "[N]avigate to [T]ype definition")
-    nmap("<leader>nds", require("telescope.builtin").lsp_document_symbols, "[N]avigate to [D]ocument [S]ymbols")
+    nmap("<leader>nsd", require("telescope.builtin").lsp_document_symbols, "[N]avigate to [S]ymbols in [D]ocument ")
     nmap(
         "<leader>nws",
         require("telescope.builtin").lsp_dynamic_workspace_symbols,
-        "[N]avigate to [W]orkspace [S]ymbols"
+        "[N]avigate to [S]ymbols in [W]orkspace"
     )
 
     -- See `:help K` for why this keymap

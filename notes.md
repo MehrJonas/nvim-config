@@ -6,17 +6,6 @@
 - tide.nvim
 - folke/trouble.nvim
 
-# required capabilities
-
-- tabs, windows -> keymaps ?
-
-# vim-native stuff to learn
-
-- jumplist
-- marks
-- management of buffers / windows / tabs
-- quickfixlist (+telescope integration)
-
 # other todos
 
 - find better mappings for completions
@@ -25,7 +14,6 @@
 - lazygit terminal
 - better terminal management
 - saved run configs?
-- mute write notifications or turn off messages in
 
 # Links
 

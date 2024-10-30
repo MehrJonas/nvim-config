@@ -8,10 +8,6 @@ M.vmap = function(keys, func, desc) --visual mode
     vim.keymap.set("v", keys, func, { noremap = true, silent = true, desc = desc })
 end
 
-M.cmap = function(keys, func, desc) -- command line mdoe
-    vim.keymap.set("c", keys, func, { noremap = true, silent = true, desc = desc })
-end
-
 M.imap = function(keys, func, desc) --insert mode
     vim.keymap.set("i", keys, func, { noremap = true, silent = true, desc = desc })
 end

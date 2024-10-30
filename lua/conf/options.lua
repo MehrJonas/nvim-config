@@ -1,8 +1,5 @@
 local opt = vim.opt
 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 opt.hlsearch = false
 opt.backup = false
 opt.number = true
@@ -30,3 +27,11 @@ opt.signcolumn = "yes"
 opt.showmode = false
 opt.hidden = true
 opt.termguicolors = true
+
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
