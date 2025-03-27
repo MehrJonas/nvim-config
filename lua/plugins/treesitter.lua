@@ -18,6 +18,7 @@ local function init()
                 "markdown_inline",
                 "go",
                 "regex",
+                "css",
             },
 
             -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
