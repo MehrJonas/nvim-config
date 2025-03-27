@@ -15,6 +15,7 @@ return {
             { "<leader>t", group = "[T]erminal" },
             { "<leader>n", group = "[N]avigate" },
             { "<leader>w", group = "[W]orkspace" },
+            { "<leader>z", group = "[z]k" },
         },
     },
     init = function()
