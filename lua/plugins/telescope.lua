@@ -56,6 +56,9 @@ local init = function()
                     ["<C-k>"] = function()
                         vim.cmd(":normal k")
                     end,
+                    ["<C-j>"] = function()
+                        vim.cmd(":normal j")
+                    end,
                     ["-"] = actions.select_horizontal,
                     ["|"] = actions.select_vertical,
                 },
